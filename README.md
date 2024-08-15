@@ -3,4 +3,6 @@ Tạo database với các file dưới đây
 
 
 File id_keyframe chỉ cần chạy create_json_path 
+
+
 Faiss_cosine ở trên driver database của nhóm
