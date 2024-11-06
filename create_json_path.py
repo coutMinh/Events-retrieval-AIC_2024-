@@ -34,8 +34,10 @@ class File4Faiss:
     count = 0
     self.infos = []
     des_path = os.path.join(json_path, "keyframes_id.json")
-    video_paths = sorted(glob.glob(f'{self.root_database}\KeyFrames\*'))
-    for video_path in video_paths:
+    video_paths = sorted(glob.glob("D:\database\KeyFrames\*"))
+    for video_path in video_paths: #Nho thay doi lai khi chay json cho anh duoi local, bo [:-1]
+      if video_path == 'G:\\My Drive\\Colab_Notebooks\\AI_challenge_2024\\database\\scenes_txt/desktop.ini':
+        break
       image_paths = sorted(glob.glob(f'{video_path}\*.jpg'))
 
       ###### Get all id keyframes from video_path ######
@@ -151,5 +153,5 @@ class File4Faiss:
     print(f'Saved {os.path.join(bin_path, f"faiss_{method}.bin")}')
     print(f"Number of Index: {count}")
 create_file = File4Faiss('database')
-create_file.write_json_file(json_path='database', shot_frames_path='database/scenes_txt')
+create_file.write_json_file(json_path='database', shot_frames_path="G:\My Drive\Colab_Notebooks\AI_challenge_2024\database\scenes_txt")
 #create_file.write_bin_file(bin_path='/content/drive/MyDrive/Colab_Notebooks/AI_challenge_2024/database', json_path='/content/drive/MyDrive/Colab_Notebooks/AI_challenge_2024/database/keyframes_id.json', method='cosine')
